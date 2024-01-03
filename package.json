@@ -1,0 +1,75 @@
+{
+  "name": "mynameonstatusbar",
+  "displayName": "MyNameOnStatusBar",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration":{
+      "title": "Status Bar Custom Item",
+      "properties": {
+        "statusBarCustomItem.text": {
+          "type": "string",
+          "default":"Emilton Nhampossa",
+          "description": "The name of the status bar item"
+        },
+        "statusBarCustomItem.tooltip": {
+          "type": "string",
+          "default":"This Visual code belongs to Emilton Nhampossa",
+          "description": "The tooltip to display when the status bar item is hovered"
+        },
+
+        "statusBarCustomItem.icon": {
+          "type": "string",
+          "default":"",
+          "description": "The tooltip to display when the status bar item is hovered"
+        },
+        
+        "statusBarCustomColor.primaryBkColor": {
+          "type": "string",
+          "default":"#03f43710",
+          "description": "The color of the status bar background "
+        },
+        "statusBarCustomColor.secondaryBkColor": {
+          "type": "string",
+          "default":"#8febf0c0",
+          "description": "The color of the status bar background "
+        },
+        "statusBarCustomColor.foregroundColor": {
+          "type": "string",
+          "default":"#ffffff",
+          "description": "The color of the status bar background "
+        }
+
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8"
+  }
+}
